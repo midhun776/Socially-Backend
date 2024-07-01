@@ -16,6 +16,15 @@ class UserService{
                 throw error;
             }
         }
+
+    static async getUsers(){
+            try {
+                const allUsers = await UserModel.find({});
+                return allUsers;
+            } catch (error) {
+                throw error;
+            }
+        }
 }
 
 module.exports = UserService

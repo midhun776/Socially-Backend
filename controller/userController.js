@@ -16,3 +16,12 @@ exports.registerUser = async(req, res, next) => {
         throw error
     }
 }
+
+exports.getUsers = async(req, res, next) => {
+    try {
+        let allUsers = await UserService.getUsers();
+        res.json({status: true, data: allUsers});
+    } catch (error) {
+        throw error
+    }
+}
