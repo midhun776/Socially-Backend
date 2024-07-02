@@ -25,3 +25,23 @@ exports.getUsers = async(req, res, next) => {
         throw error
     }
 }
+
+exports.forgetUser = async(req, res, next) => {
+    try {
+        const {email} = req.body
+        let resultUserFound = await UserService.forgetUser(email);
+        res.json({status: true, data: resultUserFound});
+    } catch (error) {
+        throw error
+    }
+}
+
+exports.myAccount = async(req, res, next) => {
+    try {
+        const {userId} = req.body
+        let resultUserFound = await UserService.myAccount(userId);
+        res.json({status: true, data: resultUserFound});
+    } catch (error) {
+        throw error
+    }
+}

@@ -25,6 +25,24 @@ class UserService{
                 throw error;
             }
         }
+
+    static async forgetUser(email){
+            try {
+                const userFound = await UserModel.findOne({userEmail: email});
+                return userFound;
+            } catch (error) {
+                throw error;
+            }
+        }
+
+    static async myAccount(userId){
+            try {
+                const userFound = await UserModel.findOne({userID: userId});
+                return userFound;
+            } catch (error) {
+                throw error;
+            }
+        }    
 }
 
 module.exports = UserService
