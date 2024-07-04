@@ -7,7 +7,7 @@ const { Schema } = mongoose
  
 
 const userSchema = new Schema({
-    userID: { type:String, lowercase: true, required: true },
+    userID: { type:String, required: true },
     userName: { type:String, required: true },
     userPhone: { type:String, lowercase: true, required: true },
     userEmail: { type:String, lowercase: true, required: true },
@@ -31,6 +31,6 @@ userSchema.pre('save', async function() {
     }
 })
 
-const UserModel = db.model('Users', userSchema)
+const UserModel = db.model('Users', userSchema);
 
 module.exports = UserModel
