@@ -3,12 +3,12 @@ const UserModel = require("../model/userModel")
 class UserService{
     static async registerUser(
         userID, userName, userPhone,
-        userEmail, userPassword,
+        userEmail, userPassword, posts, connections, chats,
         location, latitude, longitude){
             try {
                 const createUser = new UserModel({
                     userID, userName, userPhone,
-                    userEmail, userPassword,
+                    userEmail, userPassword, posts, connections, chats,
                     location, latitude, longitude
                 });
                 return await createUser.save();
@@ -35,7 +35,7 @@ class UserService{
             }
         }
 
-    static async myAccount(userId){
+    static async findUser(userId){
             try {
                 const userFound = await UserModel.findOne({userID: userId});
                 return userFound;

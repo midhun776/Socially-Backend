@@ -3,12 +3,12 @@ const UserService = require("../services/userServices");
 exports.registerUser = async(req, res, next) => {
     try {
         const { userID, userName, userPhone,
-            userEmail, userPassword,
+            userEmail, userPassword, posts, connections, chats,
             location, latitude, longitude} = req.body;
 
         const successRes = UserService.registerUser(
             userID, userName, userPhone,
-            userEmail, userPassword,
+            userEmail, userPassword, posts, connections, chats,
             location, latitude, longitude);
         
         res.json({status: true, success:"User Registered Successfully!"});
@@ -36,10 +36,10 @@ exports.forgetUser = async(req, res, next) => {
     }
 }
 
-exports.myAccount = async(req, res, next) => {
+exports.findUser = async(req, res, next) => {
     try {
         const {userId} = req.body
-        let resultUserFound = await UserService.myAccount(userId);
+        let resultUserFound = await UserService.findUser(userId);
         res.json({status: true, data: resultUserFound});
     } catch (error) {
         throw error
