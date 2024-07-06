@@ -9,6 +9,7 @@ const { Schema } = mongoose
 const userSchema = new Schema({
     userID: { type:String, required: true },
     userName: { type:String, required: true },
+    userProfilePic: { type:String, required: true },
     userPhone: { type:String, lowercase: true, required: true },
     userEmail: { type:String, lowercase: true, required: true },
     userPassword: { type:String, required: true },

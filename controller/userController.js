@@ -2,12 +2,12 @@ const UserService = require("../services/userServices");
 
 exports.registerUser = async(req, res, next) => {
     try {
-        const { userID, userName, userPhone,
+        const { userID, userName, userProfilePic, userPhone,
             userEmail, userPassword, posts, connections, chats,
             location, latitude, longitude} = req.body;
 
         const successRes = UserService.registerUser(
-            userID, userName, userPhone,
+            userID, userName, userProfilePic, userPhone,
             userEmail, userPassword, posts, connections, chats,
             location, latitude, longitude);
         

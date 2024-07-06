@@ -2,12 +2,12 @@ const UserModel = require("../model/userModel")
 
 class UserService{
     static async registerUser(
-        userID, userName, userPhone,
+        userID, userName, userPhone, userProfilePic,
         userEmail, userPassword, posts, connections, chats,
         location, latitude, longitude){
             try {
                 const createUser = new UserModel({
-                    userID, userName, userPhone,
+                    userID, userName, userProfilePic, userPhone,
                     userEmail, userPassword, posts, connections, chats,
                     location, latitude, longitude
                 });
