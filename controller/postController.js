@@ -23,3 +23,14 @@ exports.fetchAllPost=async(req,res,next)=>{
         throw err;
     }
 }
+
+exports.getUserPosts = async(req,res,next)=>{
+    try{
+        const {userId} = req.body
+        let userPosts = await postService.getUserPosts(userId);
+        res.json({status:true, data:userPosts})
+    }
+    catch(err){
+        throw err;
+    }
+}

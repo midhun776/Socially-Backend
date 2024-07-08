@@ -7,7 +7,7 @@ class UserService{
         location, latitude, longitude){
             try {
                 const createUser = new UserModel({
-                    userID, userName, userProfilePic, userPhone,
+                    userID, userName, userPhone, userProfilePic,
                     userEmail, userPassword, posts, connections, chats,
                     location, latitude, longitude
                 });
