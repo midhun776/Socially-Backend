@@ -30,7 +30,7 @@ class postService{
     
     static async getUserPosts(userId) {
         try {
-            var postsTemp = await postModel.find({ userId: userId }).select('userId caption image createdAt');
+            var postsTemp = await postModel.find({ userId: userId }).select('userId caption image likes createdAt');
             console.log(postsTemp.length);
     
             let userPosts= [{}];
@@ -45,6 +45,7 @@ class postService{
                 userPosts[i].userId = postsTemp[i].userId;
                 userPosts[i].caption = postsTemp[i].caption;
                 userPosts[i].image = postsTemp[i].image;
+                userPosts[i].likes = postsTemp[i].likes;
                 userPosts[i].createdAt = postsTemp[i].createdAt;
                 console.log(userPosts);
             }
