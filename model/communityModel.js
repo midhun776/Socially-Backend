@@ -14,5 +14,5 @@ const communitySchema = new Schema({
 });
 
 const CommunityModel = db.model('Communities', communitySchema)
-
+    
 module.exports = CommunityModel;
