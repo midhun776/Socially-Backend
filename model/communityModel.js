@@ -11,6 +11,7 @@ const communitySchema = new Schema({
     tagline: { type:String, required: true },
     rating: { type:Array, required: true },
     about: { type:String, required: true },
+    communityImage: { type:String, required: true }
 });
 
 const CommunityModel = db.model('Communities', communitySchema)

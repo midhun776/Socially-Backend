@@ -3,11 +3,11 @@ const CommunityService = require("../services/communityServices")
 exports.addCommunity = async (req,res) => {
     try {
         const {communityName, communityCreator, members,
-            tagline, rating, about} = req.body;
-
+            tagline, rating, about, communityImage } = req.body;
+ 
         const successRes = CommunityService.addCommunity(
             communityName, communityCreator, members,
-            tagline, rating, about
+            tagline, rating, about, communityImage
         )
 
         res.json({status: true, success: "Community Added"})
