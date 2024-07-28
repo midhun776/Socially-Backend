@@ -26,8 +26,8 @@ exports.fetchAllPost=async(req,res,next)=>{
 
 exports.getUserPosts = async(req,res,next)=>{
     try{
-        const {userId} = req.body
-        let userPosts = await postService.getUserPosts(userId);
+        const {userIds} = req.body
+        let userPosts = await postService.getUserPosts(userIds);
         res.json({status:true, data:userPosts})
     }
     catch(err){
