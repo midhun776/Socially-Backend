@@ -17,6 +17,19 @@ exports.registerUser = async(req, res, next) => {
     }
 }
 
+exports.addChat = async(req, res, next) => {
+    try {
+        const { userID, friendId} = req.body;
+
+        const successRes = UserService.addChat(
+            userID, friendId);
+        
+        res.json({status: successRes, success:"User Registered Successfully!"});
+    } catch (error) {
+        throw error
+    }
+}
+
 exports.getUsers = async(req, res, next) => {
     try {
         let allUsers = await UserService.getUsers();
@@ -45,3 +58,4 @@ exports.findUser = async(req, res, next) => {
         throw error
     }
 }
+

@@ -5,5 +5,6 @@ router.post('/registerUser', UserController.registerUser);
 router.get('/getUsers', UserController.getUsers);
 router.get('/forgetUser', UserController.forgetUser);
 router.post('/findUser', UserController.findUser);
+router.post('/addChat', UserController.addChat);
 
 module.exports = router;

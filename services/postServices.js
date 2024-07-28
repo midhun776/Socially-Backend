@@ -69,11 +69,12 @@ class postService {
             }
 
             for (let m = 0; m < usersPostsLength.length; m++) {
-                var userDetails = await UserModel.findOne({ userID: userIds[m] }).select('userName userProfilePic');
+                var userDetails = await UserModel.findOne({ userID: userIds[m] }).select('userID userName userProfilePic');
                 console.log(userDetails.userName);
                 console.log(userDetails);
                 for (let p = 0; p < usersPostsLength[m]; p++) {
                     console.log(n);
+                    userPosts[n].userID = userDetails.userID;
                     userPosts[n].userName = userDetails.userName;
                     userPosts[n].userProfilePic = userDetails.userProfilePic;
                     n++;
